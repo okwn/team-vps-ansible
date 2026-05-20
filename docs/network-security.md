@@ -145,7 +145,7 @@ python3 -c "
 import yaml, subprocess, json
 acc = yaml.safe_load(open('~/.contabo-accounts.yaml'))['accounts']['account-a']
 flags = [f'--oauth2-clientid={acc[\"client_id\"]}', f'--oauth2-client-secret={acc[\"client_secret\"]}', f'--oauth2-user={acc[\"user\"]}', f'--oauth2-password={acc[\"password\"]}']
-res = subprocess.run(['cntb', 'get', 'firewall', '84de8215-2ccd-4aa8-9a92-9a1e385fb17c', '--output', 'json', *flags], capture_output=True, text=True)
+res = subprocess.run(['cntb', 'get', 'firewall', '<your-firewall-uuid>', '--output', 'json', *flags], capture_output=True, text=True)
 print(json.loads(res.stdout)[0]['rules'])
 "
 
