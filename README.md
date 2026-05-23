@@ -81,6 +81,40 @@ site.yml           # aggregate playbook (most days you'd run individual phases)
 
 ### Prerequisites
 
+- [Terraform](https://terraform.io) >= 1.5
+- [Ansible](https://ansible.com) >= 2.15
+- Python 3.11+ with `pip install ansible-core hvac`
+- Contabo account with API access
+- Cloudflare account with a zone configured
+- AWS account for Roles Anywhere and S3 log bucket
+
+### Bootstrap a new VPS
+
+```bash
+# 1. Provision infrastructure
+cd terraform/contabo
+terraform init
+terraform plan -var-file=../../inventory/prod.tfvars
+terraform apply
+
+# 2. Collect the new host IP from terraform output
+
+# 3. Add the host to inventory
+cp inventory/hosts.yml.example inventory/hosts.yml
+# Edit hosts.yml with the new IP
+
+# 4. Run the phase playbooks in order
+ansible-playbook playbooks/00-bootstrap.yml -i inventory/hosts.yml --limit new-host
+ansible-playbook playbooks/10-harden.yml -i inventory/hosts.yml --limit new-host
+ansible-playbook playbooks/20-dev-tools.yml -i inventory/hosts.yml --limit new-host
+# ... continue with remaining phase playbooks
+
+# 5. Distribute welcome-kit to the new user
+# The ops team sends the tgz from scripts/welcome-kit.sh to the new developer
+```
+
+### Prerequisites
+
 - Cloudflare account with Zero Trust enabled (free tier OK up to 50 users)
 - One AWS account for SES + IAM Roles Anywhere + S3 log bucket
 - Domain name (you'll create `vps-<name>.<your-domain>` per member)
