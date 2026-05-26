@@ -206,3 +206,6 @@ MIT — see [LICENSE](LICENSE).
 
 Contributions welcome. This was built for one specific team's workflow; if
 your edge case is different but the core pattern fits, open an issue.
+
+## Contributing
+PRs welcome!
