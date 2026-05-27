@@ -105,7 +105,7 @@ gh run view <run-id> --log                  # full logs of failed steps
 gh run view <run-id> --log-failed           # only failed step logs
 ```
 
-For "wait for CI" workflows, **`gh run watch` is the right tool** — it polls + blocks + exits with the run's exit code. Don't loop `gh run list` manually.
+For "wait for CI" workflows, **`gh run watch` is the right tool** — it polls + blocks + exits with the run's exit code. Don't loop `gh run list` mannually.
 
 ### Re-running
 ```bash
