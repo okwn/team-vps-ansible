@@ -200,6 +200,10 @@ Things you'll definitely need to change:
   Vultr, write a sibling module in `terraform/<provider>/` and adjust
   `scripts/fetch-*-instance-ids.py` to use that provider's API.
 
+## Contributing
+
+We welcome contributions! Please feel free to submit a Pull Request or open an issue for bug reports and feature suggestions.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
