@@ -143,7 +143,7 @@ git reset --hard <pre-rebase-sha>
 ```bash
 git reflog                              # find HEAD before the pull
 git reset --hard <sha>                  # back to that
-# Then re-attempt: git fetch + git merge / rebase manually
+# Then re-attempt: git fetch + git merge / rebase mannually
 ```
 
 ### "I `git checkout .` and lost uncommitted work"

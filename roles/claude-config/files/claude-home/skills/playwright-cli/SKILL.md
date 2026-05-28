@@ -79,7 +79,7 @@ rg 'pattern' /tmp/page.html
 ### 2. Log into an internal tool and extract data
 
 ```bash
-# Start Chrome once, log in manually via playwright-cli attach
+# Start Chrome once, log in mannually via playwright-cli attach
 google-chrome-stable --remote-debugging-port=9222 --user-data-dir=~/.chrome-workdata &
 # In another terminal
 playwright-cli attach --cdp=chrome
