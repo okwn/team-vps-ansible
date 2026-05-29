@@ -213,3 +213,5 @@ your edge case is different but the core pattern fits, open an issue.
 
 ## Contributing
 PRs welcome!
+<!-- Contributor: Arvuno - documentation update -->
+
