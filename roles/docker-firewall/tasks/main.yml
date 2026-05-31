@@ -2,7 +2,7 @@
 # Block external NIC → container traffic via DOCKER-USER chain.
 # Defense-in-depth: docker-compose's `ports:` field bypasses the daemon.json
 # "ip": "127.0.0.1" setting (it sends 0.0.0.0 explicitly to the Docker API),
-# so the daemon-level localhost-bind is not enough on its own.
+# so the daemon-level localhost-bind is not enough on it's own.
 
 - name: codens-docker-firewall script
   copy:

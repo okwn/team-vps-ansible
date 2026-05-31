@@ -123,5 +123,5 @@ tmux kill-session -t long-build
 ## Anti-Patterns
 
 - **Polling every 1 second** to watch progress: capture every 30-60s instead, or use the `Monitor` tool with a tail-f-like script.
-- **Sending many keys quickly**: tmux can drop characters under heavy bursts. Add `\;` separators or put each in its own `send-keys` call.
+- **Sending many keys quickly**: tmux can drop characters under heavy bursts. Add `\;` separators or put each in it's own `send-keys` call.
 - **Trusting capture-pane to be "current"**: terminal apps sometimes redraw async. If you sent a command, give it 1-2 seconds before capturing the result.
